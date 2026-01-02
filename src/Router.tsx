@@ -10,6 +10,12 @@ const router = createBrowserRouter([
   {
     path:"/dashboard",
     element: <Dashboard />
+  },
+  {
+    path:'/categories'
+  },
+  {
+    path:'/transactions'
   }
 ]);
 
