@@ -1,5 +1,5 @@
-import {Table} from "@mantine/core"
-import {useEffect, useState} from "react"
+import {Table} from "@mantine/core";
+import {useEffect, useState} from "react";
 
 //data for each transaction
 type Transaction = {

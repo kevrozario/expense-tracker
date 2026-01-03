@@ -1,6 +1,6 @@
 import { AppShell} from '@mantine/core';
 import { HeaderNavbar } from '../components/HeaderNavbar';
-import { TransactionTable } from '../components/TransactionTable'
+import { TransactionTable } from '../components/TransactionTable';
 
 import { useMantineTheme } from '@mantine/core';
 

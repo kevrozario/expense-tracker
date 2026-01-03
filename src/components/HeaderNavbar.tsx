@@ -1,5 +1,5 @@
 import { AppShell, Group, Button, Title } from "@mantine/core";
-import {Link} from "react-router-dom"
+import {Link} from "react-router-dom";
 
 export function HeaderNavbar() {
   return (
