@@ -1,4 +1,4 @@
-import { AppShell, Container, Title } from '@mantine/core';
+import { AppShell } from '@mantine/core';
 import { useMantineTheme } from '@mantine/core';
 import { HeaderNavbar } from '../components/HeaderNavbar';
 

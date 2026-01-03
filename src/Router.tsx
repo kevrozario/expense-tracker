@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { UploadPage } from './pages/UploadPage';
 import { Dashboard } from './pages/Dashboard';
+import { TransactionsPage } from './pages/TransactionsPage';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,8 @@ const router = createBrowserRouter([
     path:'/categories'
   },
   {
-    path:'/transactions'
+    path:'/transactions',
+    element: <TransactionsPage />
   }
 ]);
 
