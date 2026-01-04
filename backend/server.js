@@ -11,7 +11,19 @@ app.get("/", (req, res) => {
     res.send("backend running");
 });
 
+//transaction route
+const csvUploadRoute = require("./routes/transactions");
+app.use("/csv-uploads", csvUploadRoute);
+
+app.use((err, req, res, next)=> {
+    console.error("error -> ", err);
+
+   res.status(400).json({error: err.message});
+});
+
+//add another route later
+
+//start server
 app.listen(port, () => {
     console.log("Server listening on PORT", port);
 });
-

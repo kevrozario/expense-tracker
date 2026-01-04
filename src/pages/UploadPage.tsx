@@ -7,11 +7,11 @@ export function UploadPage() {
   const theme = useMantineTheme();
   return (
       <AppShell
-      header={{height: 60}}
+      header={{height: 90}}
       >
         <AppShell.Header>
             <Center>
-                <Title order={1}>Expense Tracker</Title>
+                <Title size="3.5rem">Expense Tracker</Title>
             </Center>
         </AppShell.Header>
 
