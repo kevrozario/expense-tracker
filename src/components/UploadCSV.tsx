@@ -48,7 +48,7 @@ export function UploadCSV() {
             }
         });
         
-        const res = await fetch("csv-uploads", { 
+        const res = await fetch("/csv-uploads", { 
             method: "POST",
             body: data,
         });
@@ -98,6 +98,11 @@ export function UploadCSV() {
     onClick={SubmitCSV}
     disabled={!entries}
     size="md"
+    styles={{
+        root: {
+            backgroundColor: "#00ffffff"
+        }
+    }}
     >
     Submit
     </Button>

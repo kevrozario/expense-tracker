@@ -2,7 +2,9 @@ const Database = require("better-sqlite3");
 const db = new Database("database.db");
 
 db.exec(`
-    CREATE TABLE IF NOT EXISTS transactions (
+    DROP TABLE IF EXISTS transactions;
+
+    CREATE TABLE transactions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     tDate TEXT NOT NULL,
     pDate TEXT NOT NULL,
@@ -12,3 +14,5 @@ db.exec(`
     account TEXT NOT NULL
     );
     `);
+    
+module.exports = db;

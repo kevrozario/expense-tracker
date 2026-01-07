@@ -1,5 +1,5 @@
 const {parse} =require("csv-parse/sync");
-const database=require("../db");
+const database=require("../database");
 
 const headerMap= {
     tDate: ["Transaction Date", "Trans. Date"],
@@ -11,8 +11,8 @@ const headerMap= {
 
 
 
-async function combineCSV(files, accounts) {
-
+function combineCSV(files, accounts) {
+    console.log("you made it to combineCSV")
     //loop through each file
     for (let i=0; i < files.length; i++) {
         const file = files[i];
@@ -49,11 +49,11 @@ async function combineCSV(files, accounts) {
                 }
             }
 
-            await database.query(
-                `INSERT INTO transactions (tDate, pDate, description, amount, category, account) VALUES (?, ?, ?, ?, ?, ?) `,
-                [columnOrder.tDate, columnOrder.pDate, columnOrder.desc, columnOrder.amount, columnOrder.category, columnOrder.account]
+            database.prepare(
+                `INSERT INTO transactions (tDate, pDate, description, amount, category, account) VALUES (?,?,?,?,?,?)`
+            ).run(
+                columnOrder.tDate, columnOrder.pDate, columnOrder.desc, columnOrder.amount, columnOrder.category, columnOrder.account
             );
-
 
         }
 

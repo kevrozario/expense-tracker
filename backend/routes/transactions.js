@@ -1,13 +1,17 @@
 const express=require("express");
 const router = express.Router();
+const database=require("../database");
 
-const upload = require("../middleware/upload");
-const combineCSV = require("../services/combineCSV")
-
-router.post("/", upload.array("files"), async (req, res, next)=> {
+router.get("/", async (req, res, next) => {
     try {
-        await combineCSV(req.files, req.body.accounts);
-        res.json({success: true});
+        const result = await database.query(
+            "SELECT * FROM transactions"
+        );
+        
+        //get rows only and not fields
+        const rows = result[0];
+
+        res.json(rows);
     } catch (err) {
         next(err);
     }

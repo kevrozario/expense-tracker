@@ -1,17 +1,21 @@
 const express=require("express");
 const router = express.Router();
-const database=require("../db");
 
-router.get("/", async (req, res, next) => {
+const upload = require("../middleware/upload");
+const combineCSV = require("../services/combineCSV")
+
+router.post("/", upload.array("files"), (req, res, next)=> {
+    console.log("you made it to csvUpload.js");
     try {
-        const result = await database.query(
-            "SELECT * FROM transactions"
-        );
-        
-        //get rows only and not fields
-        const rows = result[0];
 
-        res.json(rows);
+        if(!req.files || req.files.length === 0) {
+            throw new Error("no csv files uploaded");
+        }
+        if (!req.body.accounts) {
+            throw new Error("missing accounts field");
+        }
+        combineCSV(req.files, req.body.accounts);
+        res.json({success: true});
     } catch (err) {
         next(err);
     }
