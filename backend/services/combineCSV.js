@@ -42,8 +42,26 @@ function combineCSV(files, accounts) {
 
                 //loop through each header values
                 for (const value of header) {
-                    if (row[value] !== undefined) {
-                        columnOrder[column] = row[value];
+                    const cell = row[value];
+                    //skip empty column values
+                    if (cell === "" || cell === null) {
+                        continue;
+                    }
+
+                    let finalValue = cell;
+
+                    if (value === "Debit" || value === "Credit") {
+                        const num  = parseFloat(cell);
+                        
+                        if (value === "Credit") {
+                            finalValue = -Math.abs(num);
+                        } else {
+                            finalValue=Math.abs(num);
+                        }
+                    }
+
+                    if (cell !== undefined) {
+                        columnOrder[column] = finalValue;
                         break;
                     }
                 }

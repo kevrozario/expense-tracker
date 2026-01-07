@@ -6,10 +6,10 @@ type Transaction = {
   id: string;
   tDate: string;
   pDate: string;
-  desc: string;
+  description: string;
   amount: number;
   category: string;
-  acc: string;
+  account: string;
 };
 
 export function TransactionTable() {
@@ -47,10 +47,10 @@ export function TransactionTable() {
                     <Table.Tr key = {row.id}>
                         <Table.Td>{row.tDate}</Table.Td>
                         <Table.Td>{row.pDate}</Table.Td>
-                        <Table.Td>{row.desc}</Table.Td>
+                        <Table.Td>{row.description}</Table.Td>
                         <Table.Td>{row.amount}</Table.Td>
                         <Table.Td>{row.category}</Table.Td>
-                        <Table.Td>{row.acc}</Table.Td>    
+                        <Table.Td>{row.account}</Table.Td>    
                     </Table.Tr>                
                 ))}
             </Table.Tbody>
