@@ -11,17 +11,20 @@ app.get("/", (req, res) => {
     res.send("backend running");
 });
 
-//transaction route
-const csvUploadRoute = require("./routes/transactions");
+//route for csv uploads
+const csvUploadRoute = require("./routes/csvUpload");
 app.use("/csv-uploads", csvUploadRoute);
+
+
+//route for transactions
+const transactionsRoute = require("./routes/transactions");
+app.use("/transactions", transactionsRoute);
 
 app.use((err, req, res, next)=> {
     console.error("error -> ", err);
 
    res.status(400).json({error: err.message});
 });
-
-//add another route later
 
 //start server
 app.listen(port, () => {
