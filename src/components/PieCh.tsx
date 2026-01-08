@@ -3,12 +3,16 @@ import {useEffect, useState} from 'react';
 
 export function PieCh() {
     const [data, setData]=useState([]);
-
+    const colors = ["indigo", "yellow", "teal", "grape", "red", "orange", "blue", "cyan", "lime"];
     useEffect(()=> {
         async function getData() {
             const res = await fetch('/categories');
             const chart = await res.json();
-            setData(chart.map((ch: { categories: string; total: number; })=>({name: ch.categories, value: ch.total})));
+            setData(chart.map((n: any, i: number) => ({
+                name: n.name,
+                value: Number(n.value),
+                color: colors[i],
+            })));        
         }
         getData();
     },[]);

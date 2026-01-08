@@ -20,6 +20,10 @@ app.use("/csv-uploads", csvUploadRoute);
 const transactionsRoute = require("./routes/transactions");
 app.use("/transactions", transactionsRoute);
 
+//route for categories
+const categoriesRoute = require("./routes/categories");
+app.use("/categories", categoriesRoute);
+
 app.use((err, req, res, next)=> {
     console.error("error -> ", err);
 

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 export function HeaderNavbar() {
   return (
-    <AppShell header={{ height: 75 }}>
+    <AppShell header={{ height: 80 }}>
       <AppShell.Header px= "md" >
         <Group h="100%" justify="space-between" align="center">
           <Title>Expense Tracker</Title>

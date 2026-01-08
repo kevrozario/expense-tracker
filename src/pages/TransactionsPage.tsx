@@ -1,4 +1,4 @@
-import { AppShell} from '@mantine/core';
+import { AppShell, Container, Paper, ScrollArea, Center} from '@mantine/core';
 import { HeaderNavbar } from '../components/HeaderNavbar';
 import { TransactionTable } from '../components/TransactionTable';
 
@@ -15,7 +15,15 @@ export function TransactionsPage() {
         </AppShell.Header>
 
       <AppShell.Main>
-        <TransactionTable />
+        <Center h="100%">
+        <Container size="xl" mt="xl">
+          <Paper shadow = "sm" radius = "md" withBorder p="md">
+            <ScrollArea h={750}>
+            <TransactionTable />
+          </ScrollArea>
+          </Paper>
+        </Container>
+        </Center>
       </AppShell.Main>
     </AppShell>
   );

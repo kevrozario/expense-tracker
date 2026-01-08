@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { UploadPage } from './pages/UploadPage';
 import { Dashboard } from './pages/Dashboard';
 import { TransactionsPage } from './pages/TransactionsPage';
+import { Categories } from './pages/Categories';
 
 const router = createBrowserRouter([
   {
@@ -13,7 +14,8 @@ const router = createBrowserRouter([
     element: <Dashboard />
   },
   {
-    path:'/categories'
+    path:'/categories',
+    element: <Categories />
   },
   {
     path:'/transactions',
