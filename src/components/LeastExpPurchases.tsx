@@ -7,12 +7,12 @@ type Category = {
     value: number;
 }
 
-export function MostSpentCard() {
+export function LeastExpPurchases() {
 const [data, setData] = useState<Category[]>([]);
 
 useEffect(()=> {
     async function getData() {
-        const res=await fetch ('stats/most-spent');
+        const res=await fetch ('stats/least-expensive');
         const finalData = await res.json();
 
         setData(finalData);
@@ -23,7 +23,7 @@ useEffect(()=> {
     return(
         <Card shadow ="md" radius="md" withBorder maw={400}>
             <Text>
-                Top 5 Spending Categories
+                10 Least Expensive Transactions
             </Text>
             <Divider mb="sm" />
 
@@ -31,7 +31,7 @@ useEffect(()=> {
                 {data.map((item, i)=> (
                     <Group key={item.name} justify='space-between'>
                         <Text>
-                            {i + 1}. {item.name} | ${item.value}
+                            {i + 1}. {item.name} | {item.value}
                         </Text>
                     </Group>
                 ))}

@@ -31,7 +31,7 @@ useEffect(()=> {
                 {data.map((item, i)=> (
                     <Group key={item.name} justify='space-between'>
                         <Text>
-                            {i + 1}. {item.name}
+                            {i + 1}. {item.name} | ${item.value}
                         </Text>
                     </Group>
                 ))}

@@ -40,4 +40,40 @@ router.get("/least-spent", (req, res, next) => {
     }
 });
 
+//most expensive card
+router.get("/most-expensive", (req, res, next) => {
+    try {
+        const result = database.prepare(
+            `SELECT description AS name, 
+        amount AS value
+        FROM transactions
+        WHERE amount > 0 
+        ORDER BY value DESC
+        LIMIT 10
+        `).all();
+        res.json(result);
+
+    } catch (err) {
+        next(err);
+    }
+});
+
+//least expensive card
+router.get("/least-expensive", (req, res, next) => {
+    try {
+        const result = database.prepare(
+            `SELECT description AS name, 
+        amount AS value
+        FROM transactions
+        WHERE amount > 0 
+        ORDER BY value ASC
+        LIMIT 10
+        `).all();
+        res.json(result);
+
+    } catch (err) {
+        next(err);
+    }
+});
+
 module.exports=router;

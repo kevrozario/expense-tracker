@@ -11,6 +11,10 @@ export default defineConfig({
       "/csv-uploads": "http://localhost:3000",
       "/stats/most-spent": "http://localhost:3000",
       "/stats/least-spent": "http://localhost:3000",
+      "/stats/least-expensive": "http://localhost:3000",
+      "/stats/most-expensive": "http://localhost:3000",
+
+
     },
   },
   test: {
