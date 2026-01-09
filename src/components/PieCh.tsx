@@ -18,6 +18,6 @@ export function PieCh() {
     },[]);
 
     return (
-        <PieChart data={data} size={300} withTooltip tooltipDataSource="segment" mx="auto" />
+        <PieChart data={data} size={500} withTooltip tooltipDataSource="segment" mx="auto" strokeWidth={3} />
     );
 }

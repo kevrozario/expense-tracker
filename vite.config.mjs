@@ -6,18 +6,11 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   server: {
     proxy: {
-      "/transactions": {
-        target: "http://localhost:3000",
-        changeOrigin: true,
-      },
-      "/csv-uploads": {
-        target: "http://localhost:3000",
-        changeOrigin: true,
-      },
-      "/categories" : {
-        target: "http://localhost:3000",
-        changeOrigin: true
-      },
+      "/categories": "http://localhost:3000",
+      "/transactions": "http://localhost:3000",
+      "/csv-uploads": "http://localhost:3000",
+      "/stats/most-spent": "http://localhost:3000",
+      "/stats/least-spent": "http://localhost:3000",
     },
   },
   test: {

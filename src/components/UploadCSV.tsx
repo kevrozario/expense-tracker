@@ -34,8 +34,6 @@ export function UploadCSV() {
 
 
 
-
-
     async function SubmitCSV() {
 
         //send CSV files to the backend

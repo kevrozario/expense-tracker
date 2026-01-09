@@ -2,7 +2,8 @@ import { AppShell } from '@mantine/core';
 import { useMantineTheme } from '@mantine/core';
 import { HeaderNavbar } from '../components/HeaderNavbar';
 import { PieCh } from '../components/PieCh';
-import {PieChart} from '@mantine/charts';
+import { MostSpentCard } from '../components/MostSpentCard';
+import { LeastSpentCard } from '../components/LeastSpentCard';
 
 
 export function Categories() {
@@ -17,6 +18,8 @@ export function Categories() {
 
       <AppShell.Main>
         <PieCh />
+        <MostSpentCard />
+        <LeastSpentCard />
       </AppShell.Main>
     </AppShell>
   );

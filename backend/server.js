@@ -24,6 +24,10 @@ app.use("/transactions", transactionsRoute);
 const categoriesRoute = require("./routes/categories");
 app.use("/categories", categoriesRoute);
 
+//route for stats
+const statsRoute = require("./routes/stats");
+app.use("/stats", statsRoute);
+
 app.use((err, req, res, next)=> {
     console.error("error -> ", err);
 
