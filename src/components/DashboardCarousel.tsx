@@ -1,6 +1,6 @@
 import '@mantine/carousel/styles.css';
 import { Carousel } from '@mantine/carousel';
-import {Card, Text, Title, Group} from '@mantine/core'
+import {Card, Text, Title, Center} from '@mantine/core'
 import {useEffect, useState} from 'react';
 
 
@@ -59,6 +59,7 @@ export function DashboardCarousel() {
       emblaOptions={{ loop: true, align: 'start', slidesToScroll: 3 }}
         >
        {cards.map((card)=> (
+        
         <Carousel.Slide key={card.title}>
             <CarouselCard{...card} />
         </Carousel.Slide>
