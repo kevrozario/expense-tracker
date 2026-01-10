@@ -18,6 +18,6 @@ export function DonutCh() {
     },[]);
 
     return (
-        <DonutChart data={data} size={500} thickness={75}  withLabels withLabelsLine tooltipDataSource="segment" mx="auto" paddingAngle={3} labelsType='percent'/>
+        <DonutChart data={data} size={450} thickness={75}  withLabels withLabelsLine tooltipDataSource="segment" mx="auto" paddingAngle={3} labelsType='percent'/>
     );
 }
