@@ -28,6 +28,10 @@ app.use("/categories", categoriesRoute);
 const statsRoute = require("./routes/stats");
 app.use("/stats", statsRoute);
 
+//route for carousels
+const carouselRoute=require("./routes/carousel")
+app.use("/carousel", carouselRoute);
+
 app.use((err, req, res, next)=> {
     console.error("error -> ", err);
 

@@ -1,6 +1,7 @@
 import { AppShell } from '@mantine/core';
 import { useMantineTheme } from '@mantine/core';
 import { HeaderNavbar } from '../components/HeaderNavbar';
+import { DashboardCarousel } from '../components/DashboardCarousel';
 
 export function Dashboard() {
   const theme = useMantineTheme();
@@ -12,7 +13,9 @@ export function Dashboard() {
                 <HeaderNavbar />
         </AppShell.Header>
 
-      <AppShell.Main>Main</AppShell.Main>
+      <AppShell.Main>
+        <DashboardCarousel />
+      </AppShell.Main>
     </AppShell>
   );
 }

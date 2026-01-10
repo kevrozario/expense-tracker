@@ -21,7 +21,10 @@ useEffect(()=> {
 },[]);
 
     return(
-        <Card shadow ="md" radius="md" withBorder maw={400}>
+        <Card shadow ="md" radius="md" withBorder maw={400}   style={{
+            backgroundColor: 'var(--mantine-color-dark-1)',
+            color: 'var(--mantine-color-dark-7)',}}
+            >            
             <Text>
                 Top 5 Spending Categories
             </Text>

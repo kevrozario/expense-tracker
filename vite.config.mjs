@@ -13,6 +13,13 @@ export default defineConfig({
       "/stats/least-spent": "http://localhost:3000",
       "/stats/least-expensive": "http://localhost:3000",
       "/stats/most-expensive": "http://localhost:3000",
+      "/carousel/top-category": "http://localhost:3000",
+      "/carousel/bottom-category": "http://localhost:3000",
+      "/carousel/biggest-purchase": "http://localhost:3000",
+      "/carousel/smallest-purchase": "http://localhost:3000",
+      "/carousel/total-amount": "http://localhost:3000",
+      "/carousel/transaction-count": "http://localhost:3000",
+      "/carousel/average-amount": "http://localhost:3000",
 
 
     },

@@ -21,7 +21,10 @@ useEffect(()=> {
 },[]);
 
     return(
-        <Card shadow ="md" radius="md" withBorder maw={400}>
+        <Card shadow ="md" radius="md" withBorder maw={400}   style={{
+    backgroundColor: 'var(--mantine-color-dark-1)',
+    color: 'var(--mantine-color-dark-7)',}}
+    >
             <Text>
                 10 Least Expensive Transactions
             </Text>
@@ -31,7 +34,7 @@ useEffect(()=> {
                 {data.map((item, i)=> (
                     <Group key={item.name} justify='space-between'>
                         <Text>
-                            {i + 1}. {item.name} | {item.value}
+                            {i + 1}. {item.name} | ${item.value}
                         </Text>
                     </Group>
                 ))}
