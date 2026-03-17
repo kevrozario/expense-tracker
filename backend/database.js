@@ -1,10 +1,9 @@
 const Database = require("better-sqlite3");
-const db = new Database("database.db");
+const dbPath = process.env.DB_PATH || "database.db";
+const db = new Database(dbPath);
 
 db.exec(`
-    DROP TABLE IF EXISTS transactions;
-
-    CREATE TABLE transactions (
+    CREATE TABLE IF NOT EXISTS transactions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     tDate TEXT NOT NULL,
     pDate TEXT NOT NULL,
